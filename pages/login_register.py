@@ -9,4 +9,11 @@ class LoginRegisterPage:
         self.log_in_button_name = 'login'
 
     def create_account(self, email, password):
-        pass
+        self.driver.find_element('id', self.email_address_id).send_keys(email)
+        self.driver.find_element('id', self.re_password_id).send_keys(password)
+        self.driver.find_element('name', self.register_button_name).send_keys(Keys.ENTER)
+
+    def login(self, email, password):
+        self.driver.find_element('id', self.username_id).send_keys(email)
+        self.driver.find_element('id', self.password_id).send_keys(password)
+        self.driver.find_element('name', self.log_in_button_name).send_keys(Keys.ENTER)
