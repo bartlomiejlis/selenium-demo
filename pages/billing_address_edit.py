@@ -1,15 +1,18 @@
+from locators.locators import BillingAddressEditLocators
+
+
 class BillingAddressEditPage:
     def __init__(self, driver):
         self.driver = driver
-        self.first_name_id = 'billing_first_name'
-        self.last_name_id = 'billing_last_name'
-        self.country_id = 'billing_country'
-        self.street_address_id_1 = 'billing_address_1'
-        self.street_address_id_2 = 'billing_address_2'
-        self.postcode_id = 'billing_postcode'
-        self.city_id = 'billing_city'
-        self.phone_id = 'billing_phone'
-        self.save_address_btn_name = 'save_address'
+        self.first_name_id = BillingAddressEditLocators.first_name_id
+        self.last_name_id = BillingAddressEditLocators.last_name_id
+        self.country_id = BillingAddressEditLocators.country_id
+        self.street_address_id_1 = BillingAddressEditLocators.street_address_id_1
+        self.street_address_id_2 = BillingAddressEditLocators.street_address_id_2
+        self.postcode_id = BillingAddressEditLocators.postcode_id
+        self.city_id = BillingAddressEditLocators.city_id
+        self.phone_id = BillingAddressEditLocators.phone_id
+        self.save_address_btn_name = BillingAddressEditLocators.save_address_btn_name
 
     def set_first_name(self, first_name):
         self.driver.find_element('id', self.first_name_id).send_keys(first_name)

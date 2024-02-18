@@ -1,16 +1,19 @@
+from locators.locators import LoginRegisterLocators
+
+
 class LoginRegisterPage:
     def __init__(self, driver):
         self.driver = driver
-        self.email_address_id = 'reg_email'
-        self.re_password_id = 'reg_password'
-        self.register_button_name = 'register'
-        self.username_id = 'username'
-        self.password_id = 'password'
-        self.log_in_button_name = 'login'
+        self.email_address_id = LoginRegisterLocators.email_address_id
+        self.reg_password_id = LoginRegisterLocators.reg_password_id
+        self.register_button_name = LoginRegisterLocators.register_button_name
+        self.username_id = LoginRegisterLocators.username_id
+        self.password_id = LoginRegisterLocators.password_id
+        self.log_in_button_name = LoginRegisterLocators.log_in_button_name
 
     def create_account(self, email, password):
         self.driver.find_element('id', self.email_address_id).send_keys(email)
-        self.driver.find_element('id', self.re_password_id).send_keys(password)
+        self.driver.find_element('id', self.reg_password_id).send_keys(password)
         self.driver.find_element('name', self.register_button_name).send_keys(Keys.ENTER)
 
     def login(self, email, password):
