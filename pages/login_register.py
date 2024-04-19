@@ -1,4 +1,5 @@
 from locators.locators import LoginRegisterLocators
+from selenium.webdriver.common.keys import Keys
 
 
 class LoginRegisterPage:

@@ -1,4 +1,5 @@
 from locators.locators import MyAccountLocators
+from selenium.webdriver.common.by import By
 
 
 class MyAccountPage:

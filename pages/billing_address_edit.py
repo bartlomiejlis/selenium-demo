@@ -1,4 +1,5 @@
 from locators.locators import BillingAddressEditLocators
+from selenium.webdriver.common.keys import Keys
 
 
 class BillingAddressEditPage:
@@ -7,6 +8,7 @@ class BillingAddressEditPage:
         self.first_name_id = BillingAddressEditLocators.first_name_id
         self.last_name_id = BillingAddressEditLocators.last_name_id
         self.country_id = BillingAddressEditLocators.country_id
+        self.country_input_xpath = BillingAddressEditLocators.country_input_xpath
         self.street_address_id_1 = BillingAddressEditLocators.street_address_id_1
         self.street_address_id_2 = BillingAddressEditLocators.street_address_id_2
         self.postcode_id = BillingAddressEditLocators.postcode_id
@@ -21,7 +23,9 @@ class BillingAddressEditPage:
         self.driver.find_element('id', self.last_name_id).send_keys(last_name)
 
     def set_country(self, country):
-        self.Select(self.driver.find_element('id', self.country_id).select_by_visible_text(country))
+        self.driver.find_element('id', self.country_id).click()
+        self.driver.find_element('xpath', self.country_input_xpath).send_keys(country)
+        self.driver.find_element('xpath', self.country_input_xpath).send_keys(Keys.ENTER)
 
     def set_street_address(self, street, apartment):
         self.driver.find_element('id', self.street_address_id_1).send_keys(street)

@@ -1,4 +1,5 @@
 from locators.locators import AddressesLocators
+from selenium.webdriver.common.by import By
 
 
 class AddressesPage:

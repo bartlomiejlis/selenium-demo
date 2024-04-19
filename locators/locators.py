@@ -18,7 +18,8 @@ class AddressesLocators:
 class BillingAddressEditLocators:
     first_name_id = 'billing_first_name'
     last_name_id = 'billing_last_name'
-    country_id = 'billing_country'
+    country_id = 'select2-billing_country-container'
+    country_input_xpath = '/html/body/span/span/span[1]/input'
     street_address_id_1 = 'billing_address_1'
     street_address_id_2 = 'billing_address_2'
     postcode_id = 'billing_postcode'
